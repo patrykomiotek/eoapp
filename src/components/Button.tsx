@@ -1,8 +1,9 @@
-import { MouseEventHandler } from "react";
+import { Dispatch, MouseEventHandler, SetStateAction } from "react";
 
 type Props = {
   label: string;
-  onClick: MouseEventHandler<HTMLButtonElement>
+  onClick: MouseEventHandler<HTMLButtonElement>;
+  changeId?: Dispatch<SetStateAction<string>>;
 }
 
 export const Button = (props: Props) => {
@@ -13,6 +14,15 @@ export const Button = (props: Props) => {
     </button>
   );
 }
+
+// export const Button = (props: Props) => {
+//   const { label, onClick, changeId } = props;
+//   return (
+//     <button onClick={() => changeId('ala ma kota')}>
+//       {label}
+//     </button>
+//   );
+// }
 
 // export const Button = ({ label }: Props) => (
 //   <button>

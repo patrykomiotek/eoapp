@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+
 }
 
 .App-logo {
@@ -35,4 +35,14 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.form div {
+  padding: 10px;
+}
+
+.form label {
+  width: 100px;
+  margin-right: 10px;
+  display: inline-block;
 }

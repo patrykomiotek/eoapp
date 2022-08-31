@@ -1,5 +1,7 @@
+import './App.css';
 import { Main, Text } from './components/Text';
 import { Generator } from './components/Generator';
+import { LoginForm } from './components/LoginForm';
 
 const style = {
   color: 'red',
@@ -11,7 +13,8 @@ function App() {
   return (
     <div className="App">
 
-      <Generator />
+      <LoginForm />
+      {/* <Generator /> */}
 
       {/* <Main>
         <div className=''>

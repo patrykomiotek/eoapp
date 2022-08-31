@@ -26,7 +26,7 @@ export const Generator = () => {
       <div>
         UUID: {id}
       </div>
-      <Button label='Refresh' onClick={handleClick} />
+      <Button label='Refresh' changeId={setId} onClick={handleClick} />
 
       {/* <button onClick={() => handleClick()}>Click me</button> */}
       {/* <button onClick={() => handleClick(123)}>Click me</button> */}
