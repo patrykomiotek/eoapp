@@ -2,6 +2,8 @@ import './App.css';
 import { Main, Text } from './components/Text';
 import { Generator } from './components/Generator';
 import { LoginForm } from './components/LoginForm';
+import { AuthInfo } from './components/AuthInfo';
+import { AuthContainer } from './components/AuthContainer';
 
 const style = {
   color: 'red',
@@ -12,8 +14,9 @@ const style = {
 function App() {
   return (
     <div className="App">
-
-      <LoginForm />
+      <AuthInfo />
+      <AuthContainer />
+      {/* <LoginForm /> */}
       {/* <Generator /> */}
 
       {/* <Main>
