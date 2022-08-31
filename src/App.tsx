@@ -2,6 +2,7 @@ import './App.css';
 import { Main, Text } from './components/Text';
 import { Generator } from './components/Generator';
 import { LoginForm } from './components/LoginForm';
+import { MagicButton } from './components/MagicButton';
 
 const style = {
   color: 'red',
@@ -13,7 +14,8 @@ function App() {
   return (
     <div className="App">
 
-      <LoginForm />
+      <MagicButton />
+      {/* <LoginForm /> */}
       {/* <Generator /> */}
 
       {/* <Main>
