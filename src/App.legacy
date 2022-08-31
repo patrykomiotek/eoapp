@@ -1,0 +1,11 @@
+// import { Component } from 'react';
+
+// type Props = {
+//   name: string;
+// }
+// type State = {
+//   age: number;
+// }
+// class AppCls extends Component<Props, State> {
+
+// } 

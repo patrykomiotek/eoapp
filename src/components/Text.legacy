@@ -1,0 +1,17 @@
+type SumResult = string | number;
+const sum = (a: number, b: number): SumResult => {
+  if (1 === 1) {
+    return 'a';
+  }
+  return 900;
+
+  // if (a) {
+  //   c as string
+
+  // } else { 
+  //   c as number
+  // }
+  // return a + b;
+}
+
+const result: boolean = sum(2, 2);
