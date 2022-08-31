@@ -8,12 +8,6 @@ export const Text = (props: Props) => {
     <p>{children}</p>
   );
 }
-// <Text>Lorem ipsum</Text>
-{/* <Main>
-  <div>
-    <Text></Text>
-  </div>
-</Main> */}
 
 type MainPops = {
   children: React.ReactNode;
@@ -27,3 +21,4 @@ export const Main = (props: MainPops) => {
     </main>
   );
 }
+export default Main;

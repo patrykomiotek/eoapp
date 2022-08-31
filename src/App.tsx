@@ -1,15 +1,23 @@
-import { Text, Main } from './components/Text';
+import { Main, Text } from './components/Text';
+import { Generator } from './components/Generator';
 
+const style = {
+  color: 'red',
+  backgroundColor: 'black',
+}
 
 // const App = () => {
 function App() {
   return (
     <div className="App">
-      <Main>
-        <div>
+
+      <Generator />
+
+      {/* <Main>
+        <div className=''>
           <Text>Lorem ipsum</Text>
         </div>
-      </Main>
+      </Main> */}
     </div>
   );
 }
