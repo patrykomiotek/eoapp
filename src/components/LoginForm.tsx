@@ -1,5 +1,4 @@
-import { FormEvent, useState } from 'react';
-import type { ChangeEventHandler } from 'react';
+import { FormEvent, useState, useRef, useEffect } from 'react';
 
 type User = {
   email: string;
@@ -7,45 +6,69 @@ type User = {
 }
 
 const defaultUser: User = {
-  email: '',
-  password: '',
+  email: 'patryk@wp.pl',
+  password: 'xzbjhsdbjdsf',
 }
 
 export const LoginForm = () => {
   const [isSent, setIsSent] = useState(false);
-  const [user, setUser] = useState<User>(defaultUser);
+  const emailFieldRef = useRef<HTMLInputElement>(null);
+  const passwordFieldRef = useRef<HTMLInputElement>(null);
 
-  const handleChange: ChangeEventHandler<HTMLInputElement> = (event) => {
-    setUser({
-      ...user,
-      [event.target.name]: event.target.value,
-    });
-  }
+  useEffect(() => {
+    if (emailFieldRef.current) {
+      emailFieldRef.current.focus();
+    }
+  }, []);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (emailFieldRef.current && passwordFieldRef.current) {
+      const emailInput = emailFieldRef.current;
+
+      emailInput.style.border = '1px';
+      if (emailInput.value.includes('php')) {
+        emailInput.style.border = '1px solid red';
+      } else {
+        emailInput.style.border = '1px solid black';
+      }
+
+      console.log({
+        email: emailInput.value,
+        password: passwordFieldRef.current.value
+      });
+    }
     setIsSent(true);
   }
-  // const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-  //   console.log('event: ', event);
-  // }
+
+  const handleBlur = () => {
+    if (emailFieldRef.current) {
+      emailFieldRef.current.style.border = '1px solid blue';
+    }
+  }
+
+  const handleFocus = () => {
+    if (emailFieldRef.current) {
+      emailFieldRef.current.style.border = '1px solid green';
+    }
+  }
 
   return (
     <div>
       {isSent ? (
         <div>
           <h2>Form values</h2>
-          <p>Email: {user.email}, {user.password}</p>
+          <p>Email: </p>
         </div>
       ): null}
       <form className="form" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="E-mail">E-mail</label>
-          <input type="email" name="email" onChange={handleChange} />
+          <input ref={emailFieldRef} onFocus={handleFocus} onBlur={handleBlur} type="email" name="email" />
         </div>
         <div>
           <label htmlFor="Password">Password</label>
-          <input type="password" name="password" onChange={handleChange} />
+          <input ref={passwordFieldRef} type="password" name="password" />
         </div>
         <div>
           <input type="submit" value="Send me" />

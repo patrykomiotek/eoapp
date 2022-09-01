@@ -14,8 +14,8 @@ function App() {
   return (
     <div className="App">
 
-      <Counter />
-      {/* <LoginForm /> */}
+      {/* <Counter /> */}
+      <LoginForm />
       {/* <Generator /> */}
 
       {/* <Main>
