@@ -1,9 +1,10 @@
-import { useContext } from 'react';
+// import { useContext } from 'react';
 // import { AuthContext } from './AuthContext';
 import { useAuthContext } from './AuthProvider';
 
 export const AuthInfo = () => {
   const context = useAuthContext();
+
 
   const handleClick = () => {
     if (context?.isLogged) {

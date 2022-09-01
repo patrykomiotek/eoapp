@@ -1,5 +1,6 @@
   import React, { useState, createContext, MouseEvent, MouseEventHandler, useContext } from 'react';
 
+// 2.1 context type
 type Auth = {
   isLogged: boolean;
   logIn: () => void;
@@ -8,9 +9,11 @@ type Auth = {
   // nickname: string;
 }
 
+// 2.2 create context
 const AuthContext = createContext<Auth | null>(null);
 export const useAuthContext = () => useContext(AuthContext);
 
+// 1. create hook
 const useAuth = () => {
   const [isLogged, setIsLogged] = useState(false);
 
@@ -29,6 +32,7 @@ type AuthProviderProps = {
   children: React.ReactNode;
 }
 
+// 3. create provider
 export const AuthProvider = ({ children }: AuthProviderProps ) => {
   const { isLogged, logIn, logOut } = useAuth();
   return (
@@ -41,4 +45,4 @@ export const AuthProvider = ({ children }: AuthProviderProps ) => {
     </AuthContext.Provider>
   );
 }
-// AuthProvider.displayName = 'AuthProvider';
+AuthProvider.displayName = 'AuthProvider222';
