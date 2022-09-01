@@ -6,6 +6,8 @@ import { LoginForm } from './components/LoginForm';
 import { Counter } from './components/Counter';
 import { useViewPort } from './hooks/useViewPort';
 import { MagicButton } from './components/MagicButton';
+import { AuthCredentials } from './components/AuthCredentials';
+import { AuthContext } from './components/AuthContext';
 
 const style = {
   color: 'red',
@@ -26,21 +28,33 @@ function App() {
   return (
     <div className="App">
 
-      <MagicButton
-        ref={buttonRef}
-        handleMouseEnter={handleButtonMouseEnter}>
-        Click me
-      </MagicButton>
-      {/* <Counter /> */}
-      {/* X: {size.x} Y: {size.y} */}
-      {/* <LoginForm /> */}
-      {/* <Generator /> */}
+      {/* <AuthContext.Consumer>
+        {contextValue => (
+          <div>
+            {contextValue?.isLogged}
+          </div>
+        )}
+      </AuthContext.Consumer> */}
 
-      {/* <Main>
-        <div className=''>
-          <Text>Lorem ipsum</Text>
-        </div>
-      </Main> */}
+      <AuthContext.Provider value={{ isLogged: true, nick: 'abc '}}>
+        <AuthCredentials />
+
+        {/* <MagicButton
+          ref={buttonRef}
+          handleMouseEnter={handleButtonMouseEnter}>
+          Click me
+        </MagicButton> */}
+        {/* <Counter /> */}
+        {/* X: {size.x} Y: {size.y} */}
+        {/* <LoginForm /> */}
+        {/* <Generator /> */}
+
+        {/* <Main>
+          <div className=''>
+            <Text>Lorem ipsum</Text>
+          </div>
+        </Main> */}
+        </AuthContext.Provider>
     </div>
   );
 }
