@@ -3,6 +3,7 @@ import { Main, Text } from './components/Text';
 import { Generator } from './components/Generator';
 import { LoginForm } from './components/LoginForm';
 import { Counter } from './components/Counter';
+import { useViewPort } from './hooks/useViewPort';
 
 const style = {
   color: 'red',
@@ -11,10 +12,12 @@ const style = {
 
 // const App = () => {
 function App() {
+  const size = useViewPort();
   return (
     <div className="App">
 
       {/* <Counter /> */}
+      X: {size.x} Y: {size.y}
       <LoginForm />
       {/* <Generator /> */}
 
