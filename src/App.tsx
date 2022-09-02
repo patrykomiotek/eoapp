@@ -7,18 +7,30 @@ import { AuthCredentials } from './components/AuthCredentials';
 import { Clicker } from './components/Clicker';
 import { Counter } from './components/Counter';
 import { Products } from './components/Products/Products';
+import { Orders } from './components/Orders/Orders';
+import {
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+
+const queryClient = new QueryClient();
 
 const App = () => {
   return (
     <div className="App">
       <ThemeProvider>
-        <AuthProvider>
-          <ThemeSwitcher />
-          {/* <AuthCredentials /> */}
-          {/* <Clicker /> */}
-          {/* <Counter /> */}
-          <Products />
-        </AuthProvider>
+        <QueryClientProvider client={queryClient}>
+          <ReactQueryDevtools initialIsOpen={false} />
+          <AuthProvider>
+            <ThemeSwitcher />
+            {/* <AuthCredentials /> */}
+            {/* <Clicker /> */}
+            {/* <Counter /> */}
+            {/* <Products /> */}
+            <Orders />
+          </AuthProvider>
+        </QueryClientProvider>
       </ThemeProvider>
     </div>
   );
