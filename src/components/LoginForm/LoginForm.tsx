@@ -66,12 +66,12 @@ export const LoginForm = () => {
       ): null}
       <form className="form" onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="E-mail">E-mail</label>
-          <input ref={emailFieldRef} onFocus={handleFocus} onBlur={handleBlur} type="text" name="email" />
+          <label htmlFor="email">E-mail</label>
+          <input id="email" ref={emailFieldRef} onFocus={handleFocus} onBlur={handleBlur} type="text" name="email" />
         </div>
         <div>
-          <label htmlFor="Password">Password</label>
-          <input ref={passwordFieldRef} type="password" name="password" />
+          <label htmlFor="password">Password</label>
+          <input id="password" ref={passwordFieldRef} type="password" name="password" />
         </div>
         <div>
           <input type="submit" value="Send me" />
