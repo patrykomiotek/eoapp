@@ -1,27 +1,15 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 
 import { ProductRow } from './ProductRow';
-
-type Product = {
-  id: string;
-  fields: {
-    name: string;
-    price: number;
-  }
-}
+import { fetchProducts } from '../../api/products';
+import type { Product } from '../../types/Product';
 
 export const Products = () => {
   const [products, setProducts] = useState<Product[]>([]);
 
   const fetchData = async () => {
-    const response = await axios.get('https://api.airtable.com/v0/appR1T6x0KWpg335k/products', {
-      headers: {
-        Authorization: 'Bearer keyaXt4qtmUYjZljo',
-      }
-    });
-    const productsFromDb = response.data.records;
-    setProducts(productsFromDb);
+    const response = await fetchProducts();
+    setProducts(response.data.records);
   }
 
   useEffect(() => {
