@@ -1,6 +1,6 @@
 import './App.css';
 
-import { AuthProvider } from './components/AuthProvider';
+import { AuthProvider } from './components/Auth/AuthProvider';
 import { ThemeProvider } from './components/ThemeProvider';
 import { ThemeSwitcher } from './components/ThemeSwitcher';
 import { AuthCredentials } from './components/AuthCredentials';

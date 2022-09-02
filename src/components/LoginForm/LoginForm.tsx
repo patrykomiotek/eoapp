@@ -36,10 +36,10 @@ export const LoginForm = () => {
         setIsValid(false);
       }
 
-      console.log({
-        email: emailInput.value,
-        password: passwordFieldRef.current.value
-      });
+      // console.log({
+      //   email: emailInput.value,
+      //   password: passwordFieldRef.current.value
+      // });
     }
     setIsSent(true);
   }
