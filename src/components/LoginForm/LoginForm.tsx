@@ -12,6 +12,7 @@ const defaultUser: User = {
 
 export const LoginForm = () => {
   const [isSent, setIsSent] = useState(false);
+  const [isValid, setIsValid] = useState(true);
   const emailFieldRef = useRef<HTMLInputElement>(null);
   const passwordFieldRef = useRef<HTMLInputElement>(null);
 
@@ -27,10 +28,12 @@ export const LoginForm = () => {
       const emailInput = emailFieldRef.current;
 
       emailInput.style.border = '1px';
-      if (emailInput.value.includes('php')) {
-        emailInput.style.border = '1px solid red';
-      } else {
+      if (emailInput.value.includes('@')) {
         emailInput.style.border = '1px solid black';
+        setIsValid(true);
+      } else {
+        emailInput.style.border = '1px solid red';
+        setIsValid(false);
       }
 
       console.log({
@@ -58,13 +61,13 @@ export const LoginForm = () => {
       {isSent ? (
         <div>
           <h2>Form values</h2>
-          <p>Email: </p>
+          {!isValid && <p>Email is invalid</p>}
         </div>
       ): null}
       <form className="form" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="E-mail">E-mail</label>
-          <input ref={emailFieldRef} onFocus={handleFocus} onBlur={handleBlur} type="email" name="email" />
+          <input ref={emailFieldRef} onFocus={handleFocus} onBlur={handleBlur} type="text" name="email" />
         </div>
         <div>
           <label htmlFor="Password">Password</label>

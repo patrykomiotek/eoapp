@@ -5,9 +5,10 @@ import { ThemeProvider } from './components/ThemeProvider';
 import { ThemeSwitcher } from './components/ThemeSwitcher';
 import { AuthCredentials } from './components/AuthCredentials';
 import { Clicker } from './components/Clicker';
-import { Counter } from './components/Counter';
+import { Counter } from 'components/Counter';
 import { Products } from './components/Products/Products';
 import { Orders } from './components/Orders/Orders';
+import { LoginForm } from './components/LoginForm/LoginForm';
 import {
   QueryClient,
   QueryClientProvider,
@@ -28,7 +29,8 @@ const App = () => {
             {/* <Clicker /> */}
             {/* <Counter /> */}
             {/* <Products /> */}
-            <Orders />
+            {/* <Orders /> */}
+            <LoginForm />
           </AuthProvider>
         </QueryClientProvider>
       </ThemeProvider>
