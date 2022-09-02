@@ -30,7 +30,8 @@ const App = () => {
             {/* <Counter /> */}
             {/* <Products /> */}
             {/* <Orders /> */}
-            <LoginForm />
+            {/* <LoginForm /> */}
+            <Products />
           </AuthProvider>
         </QueryClientProvider>
       </ThemeProvider>

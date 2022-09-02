@@ -1,4 +1,3 @@
-import axios from 'axios';
 import type { AxiosResponse } from 'axios';
 
 import { api } from './index';
@@ -9,19 +8,19 @@ type ProductsResponse = {
 }
 
 export const fetchProducts = (): Promise<AxiosResponse<ProductsResponse>> => {
-  return api.get('/product');
+  return api.get('/products');
 }
 
 // export const saveProduct = (data): Promise<AxiosResponse<ProductsResponse>> => {
-//   return api.post('/product', data);
+//   return api.post('/products', data);
 // }
 
 // export const updateProduct = (id, data): Promise<AxiosResponse<ProductsResponse>> => {
-//   return api.patch(`/product/${id}`, data);
+//   return api.patch(`/products/${id}`, data);
 // }
 
 // export const deleteProduct = (id): Promise<AxiosResponse<ProductsResponse>> => {
-//   return api.patch(`/product/${id}`);
+//   return api.patch(`/products/${id}`);
 // }
 
 export const fetchOrders = async () => {
