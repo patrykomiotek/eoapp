@@ -14,7 +14,6 @@ describe('<LoginForm /> component', () => {
     const buttonElem = screen.getByRole('button');
     userEvent.click(buttonElem);
 
-    screen.debug();
     expect(screen.getByText('Email is invalid')).toBeInTheDocument();
   });
 
