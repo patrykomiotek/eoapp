@@ -11,7 +11,7 @@ jest.mock('../../services/products', () => ({
   fetchProducts: jest.fn(),
 }));
 
-const mockedFetchProducts = fetchProducts as jest.Mock<any>;
+const mockedFetchProducts = fetchProducts as jest.Mock;
 // const mockedFetchProducts = fetchProducts as jest.Mock<Promise<AxiosResponse<ProductResponse>>>;
 
 describe('products component', () => {
