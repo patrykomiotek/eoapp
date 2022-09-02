@@ -4,7 +4,7 @@ import { OrdersRow } from './OrdersRow';
 import { fetchOrders } from '../../api/orders';
 
 export const Orders = () => {
-  const { isLoading, isError, data: response } = useQuery(['orders'], fetchOrders);
+  const { isLoading, isError, data: response, refetch } = useQuery(['orders'], fetchOrders);
   // const {} = useQuery(['orders'], fetchOrdersId);
 
   const orders = response?.data.records;
@@ -21,6 +21,7 @@ export const Orders = () => {
           status={elem.fields.status}
         />
       ))}
+      <button onClick={() => refetch()}>Refresh</button>
     </div>
   );
 }
