@@ -6,6 +6,7 @@ import { ThemeSwitcher } from './components/ThemeSwitcher';
 import { AuthCredentials } from './components/AuthCredentials';
 import { Clicker } from './components/Clicker';
 import { Counter } from './components/Counter';
+import { Products } from './components/Products/Products';
 
 const App = () => {
   return (
@@ -15,7 +16,10 @@ const App = () => {
           <ThemeSwitcher />
           {/* <AuthCredentials /> */}
           {/* <Clicker /> */}
-          <Counter />
+          {/* <Counter /> */}
+          <Products />
+          <Products />
+          <Products />
         </AuthProvider>
       </ThemeProvider>
     </div>
