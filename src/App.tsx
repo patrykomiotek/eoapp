@@ -18,8 +18,6 @@ const App = () => {
           {/* <Clicker /> */}
           {/* <Counter /> */}
           <Products />
-          <Products />
-          <Products />
         </AuthProvider>
       </ThemeProvider>
     </div>

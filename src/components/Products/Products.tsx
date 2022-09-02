@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+import { ProductRow } from './ProductRow';
+
 type Product = {
   id: string;
   fields: {
@@ -30,9 +32,11 @@ export const Products = () => {
     <div>
       <h1>Products</h1>
       {products.map((elem) => (
-        <div key={elem.id}>
-          <span>{elem.fields.name}</span> <span>{elem.fields.price}</span>
-        </div>
+        <ProductRow
+          key={elem.id}
+          name={elem.fields.name}
+          price={elem.fields.price}
+        />
       ))}
     </div>
   );
