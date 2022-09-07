@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import { useThemeContext } from './ThemeProvider';
+import { useThemeContext } from '@components/Theme/ThemeProvider';
 
 export const Counter = () => {
   const [count, setCount] = useState(0);
@@ -16,7 +16,7 @@ export const Counter = () => {
 
     return () => {
       clearInterval(intervalId);
-    }
+    };
   }, []);
 
   // 1. inline styles
@@ -28,9 +28,5 @@ export const Counter = () => {
   // 3. additional className
   // 4. styled componenty
 
-  return (
-    <div style={styles}>
-      {count}
-    </div>
-  );
-}
+  return <div style={styles}>{count}</div>;
+};

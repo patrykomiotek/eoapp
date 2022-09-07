@@ -3,5 +3,5 @@ export type Product = {
   fields: {
     name: string;
     price: number;
-  }
-}
+  };
+};

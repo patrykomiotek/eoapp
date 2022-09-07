@@ -1,5 +1,5 @@
-import { render, screen } from "@testing-library/react";
-import { Products } from "./Products";
+import { render, screen } from '@testing-library/react';
+import { Products } from './Products';
 
 import { fetchProducts } from '../../api/products';
 
@@ -34,15 +34,17 @@ describe('<Products /> component', () => {
   it('should display first product', async () => {
     const mockedResponse = {
       data: {
-        records: [{
-          id: '124',
-          fields: {
-            name: 'Product 1',
-            price: 123,
-          }
-        }]
-      }
-    }
+        records: [
+          {
+            id: '124',
+            fields: {
+              name: 'Product 1',
+              price: 123,
+            },
+          },
+        ],
+      },
+    };
 
     mockedFetchProducts.mockResolvedValue(mockedResponse);
     render(<Products />);

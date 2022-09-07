@@ -18,12 +18,11 @@ export const Products = () => {
     } finally {
       setIsLoading(false);
     }
-  }
+  };
 
   useEffect(() => {
     fetchData();
   }, []);
-
 
   return (
     <div>
@@ -31,12 +30,8 @@ export const Products = () => {
       {isLoading && <p>Loading...</p>}
       {isError && <p>Error!</p>}
       {products.map((elem) => (
-        <ProductRow
-          key={elem.id}
-          name={elem.fields.name}
-          price={elem.fields.price}
-        />
+        <ProductRow key={elem.id} name={elem.fields.name} price={elem.fields.price} />
       ))}
     </div>
   );
-}
+};

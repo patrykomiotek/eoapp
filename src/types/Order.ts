@@ -3,5 +3,5 @@ export type Order = {
   fields: {
     orderId: string;
     status: string;
-  }
-}
+  };
+};

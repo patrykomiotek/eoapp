@@ -15,13 +15,9 @@ export const Orders = () => {
       {isLoading && <p>Loading...</p>}
       {isError && <p>Error!</p>}
       {orders?.map((elem) => (
-        <OrdersRow
-          key={elem.id}
-          orderId={elem.fields.orderId}
-          status={elem.fields.status}
-        />
+        <OrdersRow key={elem.id} orderId={elem.fields.orderId} status={elem.fields.status} />
       ))}
       <button onClick={() => refetch()}>Refresh</button>
     </div>
   );
-}
+};

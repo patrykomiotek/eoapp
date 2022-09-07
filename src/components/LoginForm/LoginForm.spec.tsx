@@ -20,10 +20,7 @@ describe('<LoginForm /> component', () => {
   it('should send form without error', () => {
     render(<LoginForm />);
 
-    userEvent.type(
-      screen.getByRole('textbox', { name: 'E-mail' }),
-      'jan@wp.pl',
-    );
+    userEvent.type(screen.getByRole('textbox', { name: 'E-mail' }), 'jan@wp.pl');
     // userEvent.type(
     //   screen.getByRole('textbox', { name: 'Password' }),
     //   'dsfsdfsd',
@@ -34,4 +31,3 @@ describe('<LoginForm /> component', () => {
     expect(screen.queryByText('Email is invalid')).not.toBeInTheDocument();
   });
 });
-

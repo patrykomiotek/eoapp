@@ -3,12 +3,12 @@ import { FormEvent, useState, useRef, useEffect } from 'react';
 type User = {
   email: string;
   password: string;
-}
+};
 
 const defaultUser: User = {
   email: 'patryk@wp.pl',
   password: 'xzbjhsdbjdsf',
-}
+};
 
 export const LoginForm = () => {
   const [isSent, setIsSent] = useState(false);
@@ -42,19 +42,19 @@ export const LoginForm = () => {
       // });
     }
     setIsSent(true);
-  }
+  };
 
   const handleBlur = () => {
     if (emailFieldRef.current) {
       emailFieldRef.current.style.border = '1px solid blue';
     }
-  }
+  };
 
   const handleFocus = () => {
     if (emailFieldRef.current) {
       emailFieldRef.current.style.border = '1px solid green';
     }
-  }
+  };
 
   return (
     <div>
@@ -63,11 +63,18 @@ export const LoginForm = () => {
           <h2>Form values</h2>
           {!isValid && <p>Email is invalid</p>}
         </div>
-      ): null}
+      ) : null}
       <form className="form" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="email">E-mail</label>
-          <input id="email" ref={emailFieldRef} onFocus={handleFocus} onBlur={handleBlur} type="text" name="email" />
+          <input
+            id="email"
+            ref={emailFieldRef}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            type="text"
+            name="email"
+          />
         </div>
         <div>
           <label htmlFor="password">Password</label>
@@ -79,4 +86,4 @@ export const LoginForm = () => {
       </form>
     </div>
   );
-}
+};

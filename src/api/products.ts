@@ -4,12 +4,12 @@ import { api } from './index';
 import type { Product } from '../types/Product';
 
 type ProductsResponse = {
-  records: Product[]
-}
+  records: Product[];
+};
 
 export const fetchProducts = (): Promise<AxiosResponse<ProductsResponse>> => {
   return api.get('/products');
-}
+};
 
 // export const saveProduct = (data): Promise<AxiosResponse<ProductsResponse>> => {
 //   return api.post('/products', data);
@@ -28,6 +28,6 @@ export const fetchOrders = async () => {
     const response = await api.get('/orders');
     return response.data;
   } catch (error) {
-    // 
+    //
   }
-}
+};

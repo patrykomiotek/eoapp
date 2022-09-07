@@ -4,14 +4,14 @@ import type { ChangeEventHandler } from 'react';
 type User = {
   email: string;
   password: string;
-}
+};
 
 const defaultUser: User = {
   email: 'patryk@wp.pl',
   password: 'xzbjhsdbjdsf',
-}
+};
 
-export const LoginForm = () => {
+export const LoginFormControlled = () => {
   const [isSent, setIsSent] = useState(false);
   const [user, setUser] = useState<User>(defaultUser);
 
@@ -42,18 +42,17 @@ export const LoginForm = () => {
     }
   }, [user.password]);
 
-
   const handleChange: ChangeEventHandler<HTMLInputElement> = (event) => {
     setUser({
       ...user,
       [event.target.name]: event.target.value,
     });
-  }
+  };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsSent(true);
-  }
+  };
   // const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
   //   console.log('event: ', event);
   // }
@@ -63,9 +62,11 @@ export const LoginForm = () => {
       {isSent ? (
         <div>
           <h2>Form values</h2>
-          <p>Email: {user.email}, {user.password}</p>
+          <p>
+            Email: {user.email}, {user.password}
+          </p>
         </div>
-      ): null}
+      ) : null}
       <form className="form" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="E-mail">E-mail</label>
@@ -81,4 +82,4 @@ export const LoginForm = () => {
       </form>
     </div>
   );
-}
+};
